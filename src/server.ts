@@ -13,7 +13,7 @@ import { mongo, server } from './config/config';
 import { defineRoutes } from './modules/routes';
 
 import MainController from './controllers/main';
-import BookController from './controllers/book';
+import UserController from './controllers/user';
 
 export const application = express();
 export let httpServer: ReturnType<typeof http.createServer>;
@@ -50,7 +50,7 @@ export const Main = async () => {
     logging.log('----------------------------------------');
     logging.log('Define Controller Routing');
     logging.log('----------------------------------------');
-    defineRoutes([BookController, MainController], application);
+    defineRoutes([UserController, MainController], application);
 
     logging.log('----------------------------------------');
     logging.log('Define Routing Error');
